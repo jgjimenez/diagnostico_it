@@ -22,7 +22,8 @@ Una herramienta completa de diagnóstico para Windows que muestra información d
 
 ☕ Apoyo
 Si este proyecto te resulta útil, considera apoyar su desarrollo:
-[Donate](https://paypal.me/josegjimenez?country.x=VE&locale.x=es_XC)
+
+[Donar](https://paypal.me/josegjimenez?country.x=VE&locale.x=es_XC)
 
 ✨ ¡Tu apoyo ayuda a mantener y mejorar esta herramienta!
 

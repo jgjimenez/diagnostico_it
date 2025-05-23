@@ -254,39 +254,50 @@ public class Program
 
     // 1. Verificar Información del Sistema Operativo
     public static void CheckOperatingSystemInfo()
+{
+    Console.ForegroundColor = ConsoleColor.Cyan;
+    Console.WriteLine("\n=== INFORMACIÓN DEL SISTEMA OPERATIVO ===");
+    Console.ResetColor();
+
+    try
     {
-        Console.ForegroundColor = ConsoleColor.Cyan;
-        Console.WriteLine("\n=== INFORMACIÓN DEL SISTEMA OPERATIVO ===");
-        Console.ResetColor();
+        ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT Caption, Version, BuildNumber, OSArchitecture FROM Win32_OperatingSystem");
+        ManagementObject os = searcher.Get().Cast<ManagementObject>().FirstOrDefault();
 
-        try
+        if (os != null)
         {
-            ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT Caption, Version, BuildNumber, OSArchitecture FROM Win32_OperatingSystem");
-            ManagementObject os = searcher.Get().Cast<ManagementObject>().FirstOrDefault();
+            string osCaption = os["Caption"].ToString();
 
-            if (os != null)
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"  Nombre del SO: {osCaption}");
+            Console.WriteLine($"  Versión: {os["Version"]}");
+            Console.WriteLine($"  Número de Build: {os["BuildNumber"]}");
+            Console.WriteLine($"  Arquitectura: {os["OSArchitecture"]}");
+
+            if (osCaption.Contains("Home"))
             {
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($"  Nombre del SO: {os["Caption"]}");
-                Console.WriteLine($"  Versión: {os["Version"]}");
-                Console.WriteLine($"  Número de Build: {os["BuildNumber"]}");
-                Console.WriteLine($"  Arquitectura: {os["OSArchitecture"]}");
-                Console.ResetColor();
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("\n Advertencia: Sistema Operativo para hogar detectado.");
+                Console.WriteLine("  Esta versión no es recomendada para entornos empresariales.");
+                Console.WriteLine("  Características críticas pueden estar limitadas.");
             }
-            else
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("  No se pudo obtener la información del sistema operativo.");
-                Console.ResetColor();
-            }
+
+            Console.ResetColor();
         }
-        catch (Exception ex)
+        else
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine($"Error al obtener información del sistema operativo: {ex.Message}");
+            Console.WriteLine("  No se pudo obtener la información del sistema operativo.");
             Console.ResetColor();
         }
     }
+    catch (Exception ex)
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine($"Error al obtener información del sistema operativo: {ex.Message}");
+        Console.ResetColor();
+    }
+}
 
     // 2. Verificar Información del Procesador
     public static void CheckProcessorInfo()

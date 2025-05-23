@@ -15,6 +15,23 @@ Una herramienta completa de diagnóstico para Windows que muestra información d
 - 📊 Estadísticas de hardware y rendimiento
 - 🧩 Y mucho más...
 
+🤝 Contribuir
+¡Todas las contribuciones son bienvenidas!
+🔧 Reporta errores: Issues
+🛠️ Envía mejoras: Pull Requests
+
+☕ Apoyo
+Si este proyecto te resulta útil, considera apoyar su desarrollo:
+[Donate](https://paypal.me/josegjimenez?country.x=VE&locale.x=es_XC)
+
+✨ ¡Tu apoyo ayuda a mantener y mejorar esta herramienta!
+
+📜 Licencia
+MIT License - Ver LICENSE para más detalles.
+
+Creado con ❤️ por José G. Jiménez S. - ¿Preguntas? ¡Abre un issue o contáctame!
+
+
 ## 🚀 Instalación
 ```bash
 # Clonar repositorio

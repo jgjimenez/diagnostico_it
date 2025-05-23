@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "96yuJSfQYNw=",
+  "success": true,
+  "projectFilePath": "D:\\Proyectos Visual Studio\\DiagnosticoSistema\\DiagnosticoSistema\\DiagnosticoSistema.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\neths\\.nuget\\packages\\system.codedom\\9.0.0\\system.codedom.9.0.0.nupkg.sha512",
+    "C:\\Users\\neths\\.nuget\\packages\\system.diagnostics.eventlog\\9.0.0\\system.diagnostics.eventlog.9.0.0.nupkg.sha512",
+    "C:\\Users\\neths\\.nuget\\packages\\system.management\\9.0.0\\system.management.9.0.0.nupkg.sha512",
+    "C:\\Users\\neths\\.nuget\\packages\\system.serviceprocess.servicecontroller\\9.0.0\\system.serviceprocess.servicecontroller.9.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

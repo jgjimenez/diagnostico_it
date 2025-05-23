@@ -4,17 +4,17 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Management; // Necesario para WMI (System.Management.dll)
+using System.Management; 
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
 using System.Reflection;
-using System.Runtime.InteropServices; // Necesario para GetExtendedTcpTable
+using System.Runtime.InteropServices; 
 using System.Security;
 using System.Security.Principal;
 using System.ServiceProcess;
 using System.Text.RegularExpressions;
-using System.Threading; // Necesario para Thread.Sleep (aunque no se usa en este código, se mantuvo por si acaso)
+using System.Threading;
 
 public class Program
 {
@@ -234,25 +234,9 @@ public class Program
                 const uint TCP_STATE_LISTEN = 2; // Estado LISTEN en MIB_TCP_STATE_ENUM
                 if (tcpRow.dwState == TCP_STATE_LISTEN)
                 {
-                    // **LA LÍNEA CORREGIDA PARA OBTENER LOS PUERTOS REALES (0-65535)**
-
-                    // 1. Extraer los 16 bits del puerto como un ushort.
-                    //    Asumimos que el puerto está en los 16 bits menos significativos del uint.
-                    //    Esto lo guarda como un valor de 0 a 65535, pero aún en orden de bytes de red.
                     ushort rawNetworkOrderPort = (ushort)tcpRow.dwLocalPort;
-
-                    // 2. Convertir del orden de bytes de red (big-endian) al orden de bytes del host (little-endian).
-                    //    El método IPAddress.NetworkToHostOrder solo acepta 'short',
-                    //    así que convertimos temporalmente rawNetworkOrderPort a short.
-                    //    Si el valor es > 32767, se interpretará como negativo aquí,
-                    //    pero NetworkToHostOrder hará el intercambio de bytes si es necesario.
                     short hostOrderPortSigned = IPAddress.NetworkToHostOrder((short)rawNetworkOrderPort);
-
-                    // 3. Reinterpretar el resultado como un ushort (sin signo)
-                    //    para asegurar que el número de puerto sea siempre positivo (0-65535).
-                    //    Luego, se convierte a int para el almacenamiento y la visualización.
                     int port = (int)(ushort)hostOrderPortSigned;
-
                     activeListeners.Add(Tuple.Create(port, (int)tcpRow.dwOwningPid));
                 }
 
@@ -1130,8 +1114,7 @@ public class Program
         {
             DisplayMenu();
             string input = Console.ReadLine();
-            Console.Clear(); // Limpiar la consola antes de mostrar el resultado o el próximo menú
-
+            Console.Clear(); 
             if (int.TryParse(input, out int choice))
             {
                 switch (choice)
@@ -1177,7 +1160,7 @@ public class Program
                 Console.WriteLine("\nPresione cualquier tecla para volver al menú...");
                 Console.ResetColor();
                 Console.ReadKey();
-                Console.Clear(); // Limpiar de nuevo antes de mostrar el menú
+                Console.Clear(); 
             }
         }
     }

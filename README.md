@@ -28,8 +28,8 @@ Si este proyecto te resulta útil, considera apoyar su desarrollo:
 ✨ ¡Tu apoyo ayuda a mantener y mejorar esta herramienta!
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/W7W71FKS85)
-📜 Licencia
-MIT License - Ver LICENSE para más detalles.
+
+📜 Licencia MIT License - Ver LICENSE para más detalles.
 
 Creado con ❤️ por José G. Jiménez S. - ¿Preguntas? ¡Abre un issue o contáctame!
 

@@ -24,9 +24,10 @@ Una herramienta completa de diagnóstico para Windows que muestra información d
 Si este proyecto te resulta útil, considera apoyar su desarrollo:
 
 [Donar](https://paypal.me/josegjimenez?country.x=VE&locale.x=es_XC)
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/W7W71FKS85)
+
 ✨ ¡Tu apoyo ayuda a mantener y mejorar esta herramienta!
 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/W7W71FKS85)
 📜 Licencia
 MIT License - Ver LICENSE para más detalles.
 
